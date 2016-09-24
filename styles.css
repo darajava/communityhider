@@ -1,0 +1,25 @@
+#watch-discussion,
+#watch8-sentiment-actions,
+.watch7-views-info,
+.watch-view-count,
+.like-button-renderer,
+.video-extras-sparkbar-likes,
+.stat.view-count,
+.ytp-videowall-still-info-author,
+.yt-lockup-meta-info li,
+.yt-subscription-button-subscriber-count-branded-horizontal,
+.yt-subscriber-count
+{
+  visibility: hidden !important;
+}
+
+.like-button-renderer-like-button:before,
+.like-button-renderer-dislike-button:before,
+.watch-view-count.gwanthenshowforaminute,
+.yt-subscription-button-subscriber-count-branded-horizontal.gwanthenshowforaminute,
+.like-button-renderer.gwanthenshowforaminute,
+.video-extras-sparkbar-likes.gwanthenshowforaminute,
+#watch-discussion.gwanthenshowforaminute
+{
+  visibility: visible !important;
+}

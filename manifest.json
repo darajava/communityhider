@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+
+  "name": "", 
+  "description": "Make your own mind up about Youtube videos.",
+  "version": "1.0",
+  "author": "Dara Javaherian",
+
+  "background": {
+    "persistent":true,
+    "page":"bg.html"
+  },
+    
+  "permissions": ["tabs", "*://*.youtube.com/*"],
+  
+  "icons": {
+    "128": "youtube-128.png"
+  },
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "web_accessible_resources": [
+    "spinner.gif"
+  ],
+  "content_scripts" : [{
+     "matches" : 
+       ["https://www.youtube.com/*",
+       "http://www.youtube.com/*"],
+     "js" : ["jquery.js", "inject.js"],
+     "css" : ["styles.css"]
+  }]
+}
