@@ -21,6 +21,14 @@ window.addEventListener("load", function() {
       });
     });
 
+    $('#disable').click(function() {
+      if ($(this).is(':checked')) {
+        $('input:radio[name="views-group"]').filter('[value="show"]').attr('checked', true).trigger('change');
+        $('input:radio[name="comments-group"]').filter('[value="show"]').attr('checked', true).trigger('change');
+        $('input:radio[name="suggested-views-group"]').filter('[value="show"]').attr('checked', true).trigger('change');
+      }
+    });
+
     chrome.storage.sync.get(['views', 'comments', 'suggestedViews'], function(items) { 
       $('input:radio[name="views-group"]').filter('[value="' + items.views + '"]').attr('checked', true);
       $('input:radio[name="comments-group"]').filter('[value="' + items.comments + '"]').attr('checked', true);

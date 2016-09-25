@@ -9,7 +9,23 @@ $(document).ready(function(){
     viewState = items.views;
     commentState = items.comments;
     suggestedViewState = items.suggestedViews;
+    show();
   });
+
+  chrome.storage.onChanged.addListener(function (changes,areaName) {
+    if (typeof changes.views !== 'undefined') {
+      viewState = changes.views.newValue;
+    }
+    if (typeof changes.comments !== 'undefined') {
+      commentState = changes.comments.newValue;
+    }
+    if (typeof changes.suggestedViews !== 'undefined') {
+      suggestedViewState = changes.suggestedViews.newValue;
+    }
+    setup();
+    show();
+    hide();
+  })
 });
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
@@ -33,5 +49,31 @@ function setup(){
       $(suggestedViewClasses).addClass('gwanthenshowforaminute'); 
     }
   });
+  show();
 }
 
+function show() {
+  // Show the comments and the likes unconditionally
+  if (viewState == "show") {
+    $(viewsClasses).addClass('gwanthenshowforaminute'); 
+  }
+  if (commentState == "show") {
+    $(commentClasses).addClass('gwanthenshowforaminute'); 
+  }
+  if (suggestedViewState == "show") {
+    $(suggestedViewClasses).addClass('gwanthenshowforaminute'); 
+  }
+}
+
+function hide() {
+  // Hide the comments and the likes unconditionally
+  if (viewState == "hide") {
+    $(viewsClasses).removeClass('gwanthenshowforaminute'); 
+  }
+  if (commentState == "hide") {
+    $(commentClasses).removeClass('gwanthenshowforaminute'); 
+  }
+  if (suggestedViewState == "hide") {
+    $(suggestedViewClasses).removeClass('gwanthenshowforaminute'); 
+  }
+}
