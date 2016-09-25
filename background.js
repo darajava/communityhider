@@ -1,6 +1,6 @@
 chrome.runtime.onInstalled.addListener(function(details){
   if (details.reason == "install") {
-    chrome.storage.sync.set({'suggestedViews': 'hide', 'views': 'liked', 'comments': 'liked'}, function() {
+    chrome.storage.sync.set({'suggestedViews': 'hide', 'views': 'liked', 'comments': 'hide'}, function() {
       console.log('Settings saved');
     });
   }
