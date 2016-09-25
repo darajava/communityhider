@@ -1,0 +1,112 @@
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+<style>
+body {
+  width: 240px;
+  font-family: Raleway;
+  -webkit-user-select: none; 
+  font-size: 13px;
+}
+ul {
+  list-style-type:none;
+  position: relative;
+  left: -20px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.checkbox-custom, .radio-custom {
+    opacity: 0;
+    position: absolute;   
+}
+
+.checkbox-custom, .checkbox-custom-label, .radio-custom, .radio-custom-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.checkbox-custom-label, .radio-custom-label {
+    position: relative;
+}
+
+.checkbox-custom + .checkbox-custom-label:before, .radio-custom + .radio-custom-label:before {
+    content: '';
+    background: #fff;
+    border: 2px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.checkbox-custom:checked + .checkbox-custom-label:before {
+    background: #cd201f;
+    box-shadow: inset 0px 0px 0px 4px #fff;
+}
+
+.radio-custom + .radio-custom-label:before {
+    border-radius: 50%;
+}
+
+.radio-custom:checked + .radio-custom-label:before {
+    background: #cd201f;
+    box-shadow: inset 0px 0px 0px 4px #fff;
+}
+</style>
+</head>
+<body>
+<input id='disable' type='checkbox' class='checkbox-custom' class='radio-custom'></input><label class='checkbox-custom-label' for='disable'>Temporarily disable extension</label>
+<h2>Views:</h2>
+<div>
+  <input id='show-views' name='views-group' type='radio' class='radio-custom'/>
+  <label class='radio-custom-label' for='show-views'>Always show</label>
+</div>
+<div>
+  <input id='show-liked-views' name='views-group' type='radio' class='radio-custom' checked/>
+  <label class='radio-custom-label' for='show-liked-views'>Show after video liked</label>
+</div>
+<div>
+  <input id='hide-views' name='views-group' type='radio' class='radio-custom'/>
+  <label class='radio-custom-label' for='hide-views'>Never show</label>
+</div>
+
+<h2>Comments:</h2>
+<div>
+  <input id='show-comments' name='comments-group' type='radio' class='radio-custom'/>
+  <label class='radio-custom-label' for='show-comments'>Always show</label>
+</div>
+<div>
+  <input id='show-liked-comments' name='comments-group' type='radio' class='radio-custom'/>
+  <label class='radio-custom-label' for='show-liked-comments'>Show after video liked</label>
+</div>
+<div>
+  <input id='hide-comments' name='comments-group' type='radio' class='radio-custom' checked/>
+  <label class='radio-custom-label' for='hide-comments'>Never show</label>
+</div>
+
+<h2>Views on suggested videos:</h2>
+<div>
+  <input id='show-suggested-views' name='suggested-views-group' type='radio' class='radio-custom'/>
+  <label class='radio-custom-label' for='show-suggested-views'>Always show</label>
+</div>
+<div>
+  <input id='show-liked-suggested-views' name='suggested-views-group' type='radio' class='radio-custom'/>
+  <label class='radio-custom-label' for='show-liked-suggested-views'>Show after video liked</label>
+</div>
+<div>
+  <input id='hide-suggested-views' name='suggested-views-group' type='radio' class='radio-custom' checked/>
+  <label class='radio-custom-label' for='hide-suggested-views'>Never show</label>
+</div>
+
+</body>
+</html>
