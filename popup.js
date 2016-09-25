@@ -1,17 +1,24 @@
-window.addEventListener("load", function()
-{
-  var BGPage = chrome.extension.getBackgroundPage();
-  bg = BGPage.getBg();
+window.addEventListener("load", function() {
+    $('#disable').change(function(){
+      console.log($(this).val());
+    });
+    
+    var BGPage = chrome.extension.getBackgroundPage();
 
-  document.getElementById("myonoffswitch").checked = bg === "true";
-  document.getElementById("myonoffswitch")
-          .addEventListener("click", setSearch, false);
-}, false);
+    $('input[name=views-group]').change(function() {
+      BGPage.setViews($(this).val());
+    });
 
-function setSearch(){
-  var BGPage = chrome.extension.getBackgroundPage();
-  BGPage.setBg(this.checked);
+    $('input[name=comments-group]').change(function(){
+      BGPage.setComments($(this).val());
+    });
 
-  console.log();
-};
+    $('input[name=suggested-views-group]').change(function(){
+      BGPage.setSuggestedViews($(this).val());
+    });
+
+    $('input:radio[name="views-group"]').filter('[value="' + BGPage.getViews() + '"]').attr('checked', true);
+    $('input:radio[name="comments-group"]').filter('[value="' + BGPage.getComments() + '"]').attr('checked', true);
+    $('input:radio[name="suggested-views-group"]').filter('[value="' + BGPage.getSuggestedViews() + '"]').attr('checked', true);
+});
 

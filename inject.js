@@ -1,9 +1,16 @@
 $(document).ready(setup);
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  setTimeout(function(){
-    setup(); 
-  }, 1500);
+  if (request.data == "apply"){
+    setTimeout(function(){
+      setup(); 
+    }, 1500);
+  } else if (request.data == "disable") {
+  } else if (request.data == "views") {
+    console.log(request.value);
+  } else if (request.data == "comments") {
+  } else if (request.data == "suggested-views") {
+  }
 });
 
 

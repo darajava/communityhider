@@ -15,8 +15,9 @@ ul {
 }
 
 h2 {
+  font-family: arial;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 0;
 }
 
@@ -63,48 +64,50 @@ h2 {
     box-shadow: inset 0px 0px 0px 4px #fff;
 }
 </style>
+<script src="jquery.js"></script>
+<script src="popup.js"></script>
 </head>
 <body>
-<input id='disable' type='checkbox' class='checkbox-custom' class='radio-custom'></input><label class='checkbox-custom-label' for='disable'>Temporarily disable extension</label>
+<input id='disable' type='checkbox' class='checkbox-custom'></input><label class='checkbox-custom-label' for='disable'>Temporarily disable extension</label>
 <h2>Views:</h2>
 <div>
-  <input id='show-views' name='views-group' type='radio' class='radio-custom'/>
+  <input id='show-views' name='views-group' type='radio' class='radio-custom' value="show"/>
   <label class='radio-custom-label' for='show-views'>Always show</label>
 </div>
 <div>
-  <input id='show-liked-views' name='views-group' type='radio' class='radio-custom' checked/>
+  <input id='show-liked-views' name='views-group' type='radio' class='radio-custom' value="liked" checked/>
   <label class='radio-custom-label' for='show-liked-views'>Show after video liked</label>
 </div>
 <div>
-  <input id='hide-views' name='views-group' type='radio' class='radio-custom'/>
+  <input id='hide-views' name='views-group' type='radio' class='radio-custom' value="hide"/>
   <label class='radio-custom-label' for='hide-views'>Never show</label>
 </div>
 
 <h2>Comments:</h2>
 <div>
-  <input id='show-comments' name='comments-group' type='radio' class='radio-custom'/>
+  <input id='show-comments' name='comments-group' type='radio' class='radio-custom' value="show"/>
   <label class='radio-custom-label' for='show-comments'>Always show</label>
 </div>
 <div>
-  <input id='show-liked-comments' name='comments-group' type='radio' class='radio-custom'/>
+  <input id='show-liked-comments' name='comments-group' type='radio' class='radio-custom' value="liked"/>
   <label class='radio-custom-label' for='show-liked-comments'>Show after video liked</label>
 </div>
 <div>
-  <input id='hide-comments' name='comments-group' type='radio' class='radio-custom' checked/>
+  <input id='hide-comments' name='comments-group' type='radio' class='radio-custom' value="hide" checked/>
   <label class='radio-custom-label' for='hide-comments'>Never show</label>
 </div>
 
 <h2>Views on suggested videos:</h2>
 <div>
-  <input id='show-suggested-views' name='suggested-views-group' type='radio' class='radio-custom'/>
+  <input id='show-suggested-views' name='suggested-views-group' type='radio' class='radio-custom' value="show"/>
   <label class='radio-custom-label' for='show-suggested-views'>Always show</label>
 </div>
 <div>
-  <input id='show-liked-suggested-views' name='suggested-views-group' type='radio' class='radio-custom'/>
+  <input id='show-liked-suggested-views' name='suggested-views-group' type='radio' class='radio-custom' value="liked"/>
   <label class='radio-custom-label' for='show-liked-suggested-views'>Show after video liked</label>
 </div>
 <div>
-  <input id='hide-suggested-views' name='suggested-views-group' type='radio' class='radio-custom' checked/>
+  <input id='hide-suggested-views' name='suggested-views-group' type='radio' class='radio-custom' value="hide" checked/>
   <label class='radio-custom-label' for='hide-suggested-views'>Never show</label>
 </div>
 
