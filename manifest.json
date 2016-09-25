@@ -11,7 +11,7 @@
     "page":"bg.html"
   },
     
-  "permissions": ["tabs", "*://*.youtube.com/*"],
+  "permissions": ["storage", "tabs", "*://*.youtube.com/*"],
   
   "icons": {
     "128": "youtube-128.png"

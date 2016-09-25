@@ -3,22 +3,28 @@ window.addEventListener("load", function() {
       console.log($(this).val());
     });
     
-    var BGPage = chrome.extension.getBackgroundPage();
-
     $('input[name=views-group]').change(function() {
-      BGPage.setViews($(this).val());
+      chrome.storage.sync.set({'views': $(this).val()}, function() {
+        console.log('Settings saved');
+      });
     });
 
     $('input[name=comments-group]').change(function(){
-      BGPage.setComments($(this).val());
+      chrome.storage.sync.set({'comments': $(this).val()}, function() {
+        console.log('Settings saved');
+      });
     });
 
     $('input[name=suggested-views-group]').change(function(){
-      BGPage.setSuggestedViews($(this).val());
+      chrome.storage.sync.set({'suggestedViews': $(this).val()}, function() {
+        console.log('Settings saved');
+      });
     });
 
-    $('input:radio[name="views-group"]').filter('[value="' + BGPage.getViews() + '"]').attr('checked', true);
-    $('input:radio[name="comments-group"]').filter('[value="' + BGPage.getComments() + '"]').attr('checked', true);
-    $('input:radio[name="suggested-views-group"]').filter('[value="' + BGPage.getSuggestedViews() + '"]').attr('checked', true);
+    chrome.storage.sync.get(['views', 'comments', 'suggestedViews'], function(items) { 
+      $('input:radio[name="views-group"]').filter('[value="' + items.views + '"]').attr('checked', true);
+      $('input:radio[name="comments-group"]').filter('[value="' + items.comments + '"]').attr('checked', true);
+      $('input:radio[name="suggested-views-group"]').filter('[value="' + items.suggestedViews + '"]').attr('checked', true);
+    });
 });
 

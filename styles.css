@@ -15,11 +15,17 @@
 
 .like-button-renderer-like-button:before,
 .like-button-renderer-dislike-button:before,
+#watch-discussion.gwanthenshowforaminute,
+#watch8-sentiment-actions.gwanthenshowforaminute,
+.watch7-views-info.gwanthenshowforaminute,
 .watch-view-count.gwanthenshowforaminute,
-.yt-subscription-button-subscriber-count-branded-horizontal.gwanthenshowforaminute,
 .like-button-renderer.gwanthenshowforaminute,
 .video-extras-sparkbar-likes.gwanthenshowforaminute,
-#watch-discussion.gwanthenshowforaminute
+.stat.view-count.gwanthenshowforaminute,
+.ytp-videowall-still-info-author.gwanthenshowforaminute,
+.yt-lockup-meta-info li.gwanthenshowforaminute,
+.yt-subscription-button-subscriber-count-branded-horizontal.gwanthenshowforaminute,
+.yt-subscriber-count.gwanthenshowforaminute
 {
   visibility: visible !important;
 }
